@@ -7,12 +7,14 @@ class char
 {
   function char($infos, $class)
   {
+
     //criar personagem
     $class = $this->class($class);
 
     $char = array(
       "name" => $infos['Name'],
       "age" => $infos['Age'],
+      "race" => $infos['Race'],
       "class" => $class['Class'],
       "level" => "1",
       "exp" => "0",
@@ -120,11 +122,10 @@ class char
           )
         );
         break;
-      default
-        return false;
+      default:
+        $class = 'Não foi possivel classificalo';
         break;
     }
-
     return $class;
   }
 }
